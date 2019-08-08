@@ -1,7 +1,7 @@
 package com.mihailov.pet_clinic.model;
 
 public class PetType extends BaseEntity {
-private String name;
+    private String name;
 
     public String getName() {
         return name;
