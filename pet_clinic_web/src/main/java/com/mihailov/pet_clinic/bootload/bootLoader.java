@@ -22,12 +22,10 @@ public class bootLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Owner owner1 = new Owner();
-        owner1.setId(1L);
         owner1.setFirstName("Mihailov");
         owner1.setLastName("Adi");
 
         Owner owner2 = new Owner();
-        owner2.setId(2L);
         owner2.setFirstName("Milov");
         owner2.setLastName("Adrian");
         ownerService.save(owner1);
@@ -35,12 +33,10 @@ public class bootLoader implements CommandLineRunner {
         //
 
         Vet vet = new Vet();
-        vet.setId(1L);
         vet.setFirstName("Medicuuu");
         vet.setLastName("Doctorus");
 
         Vet vet2 = new Vet();
-        vet2.setId(2L);
         vet2.setFirstName("Hrisca");
         vet2.setLastName("Docilus");
 
