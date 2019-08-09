@@ -14,9 +14,9 @@ public class bootLoader implements CommandLineRunner {
     private final VetService vetService;
     private final OwnerService ownerService;
 
-    public bootLoader() {
-        vetService =  new VetMapService();
-        ownerService =  new OwnerMapService();
+    public bootLoader(VetService vetService, OwnerService ownerService) {
+        this.vetService = vetService;
+        this.ownerService = ownerService;
     }
 
     @Override
