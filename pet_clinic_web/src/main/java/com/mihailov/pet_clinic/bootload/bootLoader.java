@@ -1,11 +1,11 @@
 package com.mihailov.pet_clinic.bootload;
 
 import com.mihailov.pet_clinic.model.Owner;
+import com.mihailov.pet_clinic.model.PetType;
 import com.mihailov.pet_clinic.model.Vet;
 import com.mihailov.pet_clinic.services.OwnerService;
+import com.mihailov.pet_clinic.services.PetTypeService;
 import com.mihailov.pet_clinic.services.VetService;
-import com.mihailov.pet_clinic.services.map.OwnerMapService;
-import com.mihailov.pet_clinic.services.map.VetMapService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -13,14 +13,25 @@ import org.springframework.stereotype.Component;
 public class bootLoader implements CommandLineRunner {
     private final VetService vetService;
     private final OwnerService ownerService;
+    private final PetTypeService petTypeService;
 
-    public bootLoader(VetService vetService, OwnerService ownerService) {
+    public bootLoader(VetService vetService, OwnerService ownerService, PetTypeService petTypeService) {
         this.vetService = vetService;
         this.ownerService = ownerService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+        PetType dog = new PetType();
+        dog.setName("dog");
+        PetType savedDog = petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        cat.setName("cat");
+        PetType savedCat = petTypeService.save(cat);
+
+
         Owner owner1 = new Owner();
         owner1.setFirstName("Mihailov");
         owner1.setLastName("Adi");
