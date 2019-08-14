@@ -1,15 +1,16 @@
 package com.mihailov.pet_clinic.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Vet extends Person {
-    private Set<Speciality> specialitySet;
+    private Set<Specialty> specialtySet= new HashSet<>();
 
-    public Set<Speciality> getSpecialitySet() {
-        return specialitySet;
+    public Set<Specialty> getSpecialtySet() {
+        return specialtySet;
     }
 
-    public void setSpecialitySet(Set<Speciality> specialitySet) {
-        this.specialitySet = specialitySet;
+    public void setSpecialtySet(Set<Specialty> specialtySet) {
+        this.specialtySet = specialtySet;
     }
 }

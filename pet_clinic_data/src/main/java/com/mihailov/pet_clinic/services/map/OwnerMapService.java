@@ -1,13 +1,25 @@
 package com.mihailov.pet_clinic.services.map;
 
 import com.mihailov.pet_clinic.model.Owner;
+import com.mihailov.pet_clinic.model.Pet;
 import com.mihailov.pet_clinic.services.OwnerService;
+import com.mihailov.pet_clinic.services.PetService;
+import com.mihailov.pet_clinic.services.PetTypeService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
+    private final PetTypeService petTypeService;
+    private final PetService petService;
+
+    public OwnerMapService(PetTypeService petTypeService, PetService petService) {
+        this.petTypeService = petTypeService;
+        this.petService = petService;
+    }
+
+
     @Override
     public Set<Owner> findAll() {
         return super.findAll();
@@ -20,7 +32,27 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner save(Owner object) {
-        return super.save(object);
+
+        if (object != null) {
+            if (object.getPetSet() != null) {
+                object.getPetSet().forEach(pet -> {
+                    if (pet.getPetType() != null) {
+                        if (pet.getPetType().getId() == null) {
+                            pet.setPetType(petTypeService.save(pet.getPetType()));
+                        }
+                    } else {
+                        throw new RuntimeException("Pet type is necessary !");
+                    }
+                    if (pet.getId() == null) {
+                        Pet savedPet=petService.save(pet);
+                        pet.setId(savedPet.getId());
+                    }
+                });
+            }
+            return super.save(object);
+        } else {
+            return null;
+        }
     }
 
     @Override
