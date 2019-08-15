@@ -35,7 +35,9 @@ public class VetMapService extends AbstractMapService<Vet, Long> implements VetS
                     specialty.setId(savedSpec.getId());
                 }
             });
+            return super.save(object);
         }
+        return null;
     }
 
     @Override
