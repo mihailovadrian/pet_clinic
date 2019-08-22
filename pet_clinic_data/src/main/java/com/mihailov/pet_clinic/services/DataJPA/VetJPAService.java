@@ -3,12 +3,14 @@ package com.mihailov.pet_clinic.services.DataJPA;
 import com.mihailov.pet_clinic.model.Vet;
 import com.mihailov.pet_clinic.repositories.VetRepository;
 import com.mihailov.pet_clinic.services.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Service
+@Profile("datajpa")
 public class VetJPAService implements VetService {
     private VetRepository vetRepository;
 
