@@ -44,7 +44,7 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
                         throw new RuntimeException("Pet type is necessary !");
                     }
                     if (pet.getId() == null) {
-                        Pet savedPet=petService.save(pet);
+                        Pet savedPet = petService.save(pet);
                         pet.setId(savedPet.getId());
                     }
                 });

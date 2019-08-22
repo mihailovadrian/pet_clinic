@@ -19,8 +19,8 @@ public class Pet extends BaseEntity {
     private LocalDate birthDate;
     @Column(name = "Name")
     private String name;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "pet")
-    private Set<Visit> visitSet= new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+    private Set<Visit> visitSet = new HashSet<>();
 
     public PetType getPetType() {
         return petType;

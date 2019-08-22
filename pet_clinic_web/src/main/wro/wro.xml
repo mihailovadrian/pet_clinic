@@ -1,4 +1,4 @@
-<groups xmlns="http://www.isdc.ro/wro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<groups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.isdc.ro/wro"
         xsi:schemaLocation="http://www.isdc.ro/wro ">
     <group name="petclinic">
         <css>webjar:bootstrap/3.3.7-1/less/bootstrap.less</css>

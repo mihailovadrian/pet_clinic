@@ -16,6 +16,7 @@ public class bootLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+
     public bootLoader(VetService vetService, OwnerService ownerService, PetTypeService petTypeService, SpecialtyService specialtyService) {
         this.vetService = vetService;
         this.ownerService = ownerService;
@@ -33,10 +34,10 @@ public class bootLoader implements CommandLineRunner {
         cat.setName("cat");
         PetType savedCat = petTypeService.save(cat);
 
-        Specialty surgery=new Specialty();
+        Specialty surgery = new Specialty();
         surgery.setDescription("surgery");
 
-        Specialty dentist= new Specialty();
+        Specialty dentist = new Specialty();
         dentist.setDescription("dentist");
         specialtyService.save(surgery);
         specialtyService.save(dentist);
