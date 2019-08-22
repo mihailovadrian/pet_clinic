@@ -12,7 +12,7 @@ import java.util.Set;
 @Service
 @Profile("datajpa")
 public class PetTypeJPAService implements PetTypeService {
-    private PetTypeRepository petTypeRepository;
+    private final PetTypeRepository petTypeRepository;
 
     public PetTypeJPAService(PetTypeRepository petTypeRepository) {
         this.petTypeRepository = petTypeRepository;

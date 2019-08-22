@@ -12,7 +12,7 @@ import java.util.Set;
 @Service
 @Profile("datajpa")
 public class VetJPAService implements VetService {
-    private VetRepository vetRepository;
+    private final VetRepository vetRepository;
 
     public VetJPAService(VetRepository vetRepository) {
         this.vetRepository = vetRepository;
