@@ -44,14 +44,14 @@ public class bootLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Mihailov");
         owner1.setLastName("Adi");
-        owner1.setAddres("Str....");
+        owner1.setAddress("Str....");
         owner1.setCity("SV");
         owner1.setTelephone("0744");
 
 
         Pet pet = new Pet();
         pet.setPetType(savedDog);
-        pet.setBirthDay(LocalDate.now());
+        pet.setBirthDate(LocalDate.now());
         pet.setOwner(owner1);
         pet.setName("Boby");
         owner1.getPetSet().add(pet);
@@ -59,7 +59,7 @@ public class bootLoader implements CommandLineRunner {
         Owner owner2 = new Owner();
         owner2.setFirstName("Milov");
         owner2.setLastName("Adrian");
-        owner1.setAddres("Str..NR..");
+        owner1.setAddress("Str..NR..");
         owner1.setCity("BT");
         owner1.setTelephone("07114");
         ownerService.save(owner1);
@@ -67,7 +67,7 @@ public class bootLoader implements CommandLineRunner {
 
         Pet catPet = new Pet();
         catPet.setPetType(savedCat);
-        catPet.setBirthDay(LocalDate.now());
+        catPet.setBirthDate(LocalDate.now());
         catPet.setOwner(owner2);
         catPet.setName("Cat");
         owner2.getPetSet().add(pet);

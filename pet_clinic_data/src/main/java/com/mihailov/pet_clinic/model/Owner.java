@@ -1,12 +1,22 @@
 package com.mihailov.pet_clinic.model;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name = "Owners")
 public class Owner extends Person {
-    private Set<Pet> petSet= new HashSet<>();
-    private String addres;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+    private Set<Pet> petSet = new HashSet<>();
+
+    @Column(name = "Address")
+    private String address;
+
+    @Column(name = "City")
     private String city;
+
+    @Column(name = "Telephone")
     private String telephone;
 
     public Set<Pet> getPetSet() {
@@ -17,12 +27,12 @@ public class Owner extends Person {
         this.petSet = petSet;
     }
 
-    public String getAddres() {
-        return addres;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAddres(String addres) {
-        this.addres = addres;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getCity() {

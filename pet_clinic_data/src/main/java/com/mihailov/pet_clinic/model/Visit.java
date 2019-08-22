@@ -1,11 +1,18 @@
 package com.mihailov.pet_clinic.model;
 
-import javax.xml.crypto.Data;
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "Visits")
 public class Visit extends BaseEntity {
+    @Column(name = "Date")
     private LocalDate date;
+    @Column(name = "Description")
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "pet_id")
     private Pet pet;
 
     public LocalDate getDate() {
