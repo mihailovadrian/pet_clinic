@@ -1,9 +1,11 @@
 package com.mihailov.pet_clinic.model;
 
+import lombok.Builder;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
-
+@Builder
 @Entity
 @Table(name = "Owners")
 public class Owner extends Person {
