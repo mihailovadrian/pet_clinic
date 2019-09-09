@@ -1,10 +1,9 @@
 package com.mihailov.pet_clinic.services.DataJPA;
 
 import com.mihailov.pet_clinic.model.Owner;
-import com.mihailov.pet_clinic.repositories.OwnerRepository;
+import com.mihailov.pet_clinic.repositories.OwnerService;
 import com.mihailov.pet_clinic.repositories.PetRepository;
 import com.mihailov.pet_clinic.repositories.PetTypeRepository;
-import com.mihailov.pet_clinic.services.OwnerService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -13,13 +12,13 @@ import java.util.Set;
 
 @Service
 @Profile("datajpa")
-public class OwnerJPAService implements OwnerService {
+public class OwnerJPAService implements com.mihailov.pet_clinic.services.OwnerService {
 
-    private final OwnerRepository ownerRepository;
+    private final OwnerService ownerRepository;
     private final PetRepository petRepository;
     private final PetTypeRepository petTypeRepository;
 
-    public OwnerJPAService(OwnerRepository ownerRepository, PetRepository petRepository, PetTypeRepository petTypeRepository) {
+    public OwnerJPAService(OwnerService ownerRepository, PetRepository petRepository, PetTypeRepository petTypeRepository) {
         this.ownerRepository = ownerRepository;
         this.petRepository = petRepository;
         this.petTypeRepository = petTypeRepository;

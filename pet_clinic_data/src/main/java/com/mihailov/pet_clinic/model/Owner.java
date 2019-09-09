@@ -5,7 +5,7 @@ import lombok.Builder;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
-@Builder
+
 @Entity
 @Table(name = "Owners")
 public class Owner extends Person {
@@ -20,6 +20,7 @@ public class Owner extends Person {
 
     @Column(name = "Telephone")
     private String telephone;
+
 
     public Set<Pet> getPetSet() {
         return petSet;

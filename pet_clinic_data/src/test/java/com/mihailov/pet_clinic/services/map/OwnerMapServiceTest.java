@@ -46,7 +46,6 @@ class OwnerMapServiceTest {
     void saveWithNoId() {
 
         Owner ownerForSave = new Owner();
-
         Owner owner = ownerMapService.save(ownerForSave);
         assertNotNull(owner);
         assertNotNull(owner.getId());
