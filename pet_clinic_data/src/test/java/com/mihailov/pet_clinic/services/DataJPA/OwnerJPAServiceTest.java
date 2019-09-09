@@ -1,7 +1,7 @@
 package com.mihailov.pet_clinic.services.DataJPA;
 
 import com.mihailov.pet_clinic.model.Owner;
-import com.mihailov.pet_clinic.repositories.OwnerService;
+import com.mihailov.pet_clinic.repositories.OwnerRepository;
 import com.mihailov.pet_clinic.repositories.PetRepository;
 import com.mihailov.pet_clinic.repositories.PetTypeRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,7 +26,7 @@ import static org.mockito.Mockito.when;
 class OwnerJPAServiceTest {
     public static final String SMITH = "Smith";
     @Mock
-    OwnerService ownerRepository;
+    OwnerRepository ownerRepository;
     @Mock
     PetTypeRepository petTypeRepository;
     @Mock
