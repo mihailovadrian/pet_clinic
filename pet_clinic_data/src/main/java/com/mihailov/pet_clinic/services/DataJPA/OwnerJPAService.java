@@ -31,8 +31,8 @@ public class OwnerJPAService implements com.mihailov.pet_clinic.services.OwnerSe
     }
 
     @Override
-    public List<Owner> findAllByLastName(String lastName) {
-          return ownerRepository.findAllByLastName(lastName);
+    public List<Owner> findAllByLastNameLike(String lastName) {
+          return ownerRepository.findAllByLastNameLike(lastName);
     }
 
     @Override

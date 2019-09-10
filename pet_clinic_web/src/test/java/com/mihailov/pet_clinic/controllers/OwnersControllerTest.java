@@ -67,7 +67,7 @@ class OwnersControllerTest {
         Owner o2 = new Owner();
         o2.setId(2l);
 
-        when(ownerService.findAllByLastName(anyString())).thenReturn(Arrays.asList(o1, o2));// Return the set
+        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(Arrays.asList(o1, o2));// Return the set
         try {
             mvc.perform(get("/owners")).andExpect(status().isOk())
                     .andExpect(view().name("owners/ownersList"))
@@ -82,7 +82,7 @@ class OwnersControllerTest {
         Owner o1 = new Owner();
         o1.setId(1l);
 
-        when(ownerService.findAllByLastName(anyString())).thenReturn(Arrays.asList(o1));
+        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(Arrays.asList(o1));
         try {
             mvc.perform(get("/owners")).andExpect(status().is3xxRedirection())
                     .andExpect(view().name("redirect:/owners/1"));
