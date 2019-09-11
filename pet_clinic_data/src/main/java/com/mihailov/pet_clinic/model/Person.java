@@ -10,6 +10,7 @@ public class Person extends BaseEntity {
     @Column(name = "Last_Name")
     private String lastName;
 
+
     public String getFirstName() {
         return firstName;
     }

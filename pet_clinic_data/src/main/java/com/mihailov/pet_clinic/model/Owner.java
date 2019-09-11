@@ -1,7 +1,5 @@
 package com.mihailov.pet_clinic.model;
 
-import lombok.Builder;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -52,5 +50,23 @@ public class Owner extends Person {
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
+    }
+
+    public Pet getPet(String name) {
+        return getPet(name, false);
+    }
+
+    public Pet getPet(String name, boolean ignoreNew) {
+        name = name.toLowerCase();
+        for (Pet pet : petSet) {
+            if (!ignoreNew || !pet.isNew()) {
+                String compName = pet.getName();
+                compName = compName.toLowerCase();
+                if (compName.equals(name)) {
+                    return pet;
+                }
+            }
+        }
+        return null;
     }
 }
